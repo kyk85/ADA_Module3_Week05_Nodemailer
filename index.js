@@ -11,7 +11,7 @@ var port = process.env.PORT || 8080;
 var router = express.Router();
 
 var transporter = nodemailer.createTransport({
-        host: process.env.HORT,
+        host: process.env.HOST,
         port: process.env.EPORT,
         secure: false,
         auth: {
