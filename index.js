@@ -11,12 +11,12 @@ var port = process.env.PORT || 8080;
 var router = express.Router();
 
 var transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
-        port: 587,
+        host: process.env.HORT,
+        port: process.env.EPORT,
         secure: false,
         auth: {
-            user: "kay2kay1@gmail.com",
-            pass: "grkzdlubfwtehsdn"
+            user: process.env.USER,
+            pass: process.env.PASS
         }
     });
 
@@ -28,7 +28,7 @@ router.post('/sendmail', function(req, res) {
     var email = req.body.email;
     var name = req.body.name;
     let mailOptions = {
-        from: '"kay2kay1@gmail.com" <kay2kay1@gmail.com>',
+        from: '"HELLO" <abc@123.com>',
         to: email,
         subject: 'Hello',
         text: 'Hello World',
